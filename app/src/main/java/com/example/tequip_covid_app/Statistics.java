@@ -2,8 +2,12 @@ package com.example.tequip_covid_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +17,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.justinclicks.numbertowords.NumberToWordConverterMillionFormat;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -21,17 +24,57 @@ import org.eazegraph.lib.models.PieModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
-//    SimpleArcLoader archloader;
+    Button trackCountries;
+    SimpleArcLoader archloader;
     TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests,
-        cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
+            cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
+    LinearLayout mainlayout;
+//    private static final String[] tens_names = {
+//            "",
+//            "Ten",
+//            "Twenty",
+//            "Thirty",
+//            "Forty",
+//            "Fifty",
+//            "Sixty",
+//            "Seventy",
+//            "Eighty",
+//            "Ninety",
+//    };
+//    private static final String[] num_names = {
+//            "",
+//            "Zero",
+//            "One",
+//            "Two",
+//            "Three",
+//            "Four",
+//            "Five",
+//            "Six",
+//            "Seven",
+//            "Eight",
+//            "Nine",
+//            "Ten",
+//            "Eleven",
+//            "Twelve",
+//            "Thirteen",
+//            "Fourteen",
+//            "Fifteen",
+//            "Sixteen",
+//            "Seventeen",
+//            "Eighteen",
+//            "Nineteen",
+//    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+        mainlayout = findViewById(R.id.main_linear_layout_id);
         mPieChart = findViewById(R.id.piechart);
+
         cases = findViewById(R.id.TotalCases_Textview_id);
         todayCases = findViewById(R.id.TodayCases_textview_id);
         deaths = findViewById(R.id.death_Textview_id);
@@ -53,15 +96,29 @@ public class Statistics extends AppCompatActivity {
         critical_w = findViewById(R.id.critical_words_textview_id);
         affectedCountries_w = findViewById(R.id.AffectedCountries_words_textview_id);
         tests_w = findViewById(R.id.tests_words_textview_id);
-//        archloader = findViewById(R.id.loader);
+        archloader = findViewById(R.id.loader);
 
 
+//      Initializing and functioning of button;
+        trackCountries = findViewById(R.id.Track_countries_btn_id);
+        trackCountries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TrackCountries();
+            }
+        });
+    }
+
+    private void TrackCountries() {
+        Intent intent = new Intent(this, Countries_list.class);
+        startActivity(intent);
+//     Main method to fetch and display data
         fetchData();
     }
 
     private void fetchData() {
         String url = "https://disease.sh/v3/covid-19/all/";
-//        archloader.start();
+        archloader.start();
         StringRequest requestdata = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -87,40 +144,126 @@ public class Statistics extends AppCompatActivity {
                     mPieChart.addPieSlice(new PieModel("Active", Integer.parseInt(Active.getText().toString()), Color.parseColor("#00ccff")));
                     mPieChart.startAnimation();
 
-                    NumberToWordConverterMillionFormat Obj = new NumberToWordConverterMillionFormat();
-                    String cases1 = Obj.convert(Integer.parseInt(cases.getText().toString()));
-                    String cases2 = Obj.convert(Integer.parseInt(todayCases.getText().toString()));
-                    String cases3 = Obj.convert(Integer.parseInt(deaths.getText().toString()));
-                    String cases4 = Obj.convert(Integer.parseInt(todayDeaths.getText().toString()));
-                    String cases5 = Obj.convert(Integer.parseInt(recovered.getText().toString()));
-                    String cases6 = Obj.convert(Integer.parseInt(todayRecovered.getText().toString()));
-                    String cases7 = Obj.convert(Integer.parseInt(Active.getText().toString()));
-                    String cases8 = Obj.convert(Integer.parseInt(critical.getText().toString()));
-                    String cases9 = Obj.convert(Integer.parseInt(affectedCountries.getText().toString()));
-                    String cases10 = Obj.convert(Integer.parseInt(tests.getText().toString()));
+                    // Stopping  the loading progressbar
 
-                    cases_w.setText(cases1);
-                    todayCases_w.setText(cases2);
-                    deaths_w.setText(cases3);
-                    todayDeaths_w.setText(cases4);
-                    recovered_w.setText(cases5);
-                    todayRecovered_w.setText(cases6);
-                    Active_w.setText(cases7);
-                    critical_w.setText(cases8);
-                    affectedCountries_w.setText(cases9);
-                    tests_w.setText(cases10);
+                    archloader.stop();
+                    archloader.setVisibility(View.GONE);
+                    mainlayout.setVisibility(View.VISIBLE);
+
+
+//
+//                    cases_w.setText(convert((long) Integer.parseInt(cases.getText().toString())));
+//                    todayCases_w.setText(convert((long) Integer.parseInt(todayCases.getText().toString())));
+//                    deaths_w.setText(convert((long) Integer.parseInt(deaths.getText().toString())));
+//                    todayDeaths_w.setText(convert((long) Integer.parseInt(todayDeaths.getText().toString())));
+//                    recovered_w.setText(convert((long) Integer.parseInt(recovered.getText().toString())));
+//                    todayRecovered_w.setText(convert((long) Integer.parseInt(todayRecovered.getText().toString())));
+//                    Active_w.setText(convert((long) Integer.parseInt(Active.getText().toString())));
+//                    critical_w.setText(convert((long) Integer.parseInt(critical.getText().toString())));
+//                    affectedCountries_w.setText(convert((long) Integer.parseInt(affectedCountries.getText().toString())));
+//                    tests_w.setText(convert((long) Integer.parseInt(tests.getText().toString())));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    archloader.stop();
+                    archloader.setVisibility(View.GONE);
+                    mainlayout.setVisibility(View.VISIBLE);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                archloader.stop();
+                archloader.setVisibility(View.GONE);
+                mainlayout.setVisibility(View.VISIBLE);
                 Toast.makeText(Statistics.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(requestdata);
     }
+
+//    private static String convertLessThenOneThousand(int number) {
+//        String soFar;
+//        if (number % 100 < 20) {
+//            soFar = num_names[number % 10];
+//            number /= 100;
+//        } else {
+//            soFar = num_names[number % 10];
+//            number /= 10;
+//            soFar = tens_names[number % 10] + soFar;
+//            number /= 100;
+//        }
+//        if (number == 0) {
+//            return soFar;
+//        }
+//        return num_names[number] + "Hundred" + soFar;
+//    }
+//
+//    public static String convert(Long number) {
+//        if (number == 0) {
+//            return "Zero";
+//        }
+//        String snumber = Long.toString(number);
+//
+//        String mask = "000000000000";
+//        DecimalFormat df = new DecimalFormat(mask);
+//        snumber = df.format(number);
+//
+//        int billions = Integer.parseInt(snumber.substring(0,3));
+//
+//        int millions = Integer.parseInt(snumber.substring(3,6));
+//
+//        int hundredThousands = Integer.parseInt(snumber.substring(6,9));
+//
+//        int thousands = Integer.parseInt(snumber.substring(9,12));
+//
+//        String tradbillions ;
+//        switch (billions){
+//            case 0:
+//                tradbillions ="";
+//                break;
+//
+//            case 1:
+//                tradbillions = convertLessThenOneThousand(billions)+ " billion ";
+//                break;
+//            default:
+//                tradbillions = convertLessThenOneThousand(billions)+ " billion ";
+//        }
+//        String result = tradbillions;
+//
+//        String tradmillions ;
+//        switch (millions){
+//            case 0:
+//                tradmillions ="";
+//                break;
+//
+//            case 1:
+//                tradmillions = convertLessThenOneThousand(millions)+ " million ";
+//                break;
+//            default:
+//                tradmillions = convertLessThenOneThousand(millions)+ " million ";
+//        }
+//         result += tradmillions;
+//
+//        String tradHundredThousands ;
+//        switch (hundredThousands){
+//            case 0:
+//                tradHundredThousands ="";
+//                break;
+//
+//            case 1:
+//                tradHundredThousands = " one thousand ";
+//                break;
+//            default:
+//                tradHundredThousands = convertLessThenOneThousand(hundredThousands)+ " thousand ";
+//        }
+//        result += tradHundredThousands;
+//
+//        String tradThousand;
+//        tradThousand = convertLessThenOneThousand(thousands);
+//        result += tradThousand;
+//
+//        return result.replaceAll("^\\s+","").replaceAll("\\b\\s{2,}\\b", "");
+//    }
 }
