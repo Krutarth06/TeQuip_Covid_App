@@ -24,6 +24,8 @@ import org.eazegraph.lib.models.PieModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+
 
 public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
@@ -107,13 +109,14 @@ public class Statistics extends AppCompatActivity {
                 TrackCountries();
             }
         });
+        //     Main method to fetch and display data
+        fetchData();
     }
 
     private void TrackCountries() {
         Intent intent = new Intent(this, Countries_list.class);
         startActivity(intent);
-//     Main method to fetch and display data
-        fetchData();
+
     }
 
     private void fetchData() {
@@ -151,7 +154,7 @@ public class Statistics extends AppCompatActivity {
                     mainlayout.setVisibility(View.VISIBLE);
 
 
-//
+
 //                    cases_w.setText(convert((long) Integer.parseInt(cases.getText().toString())));
 //                    todayCases_w.setText(convert((long) Integer.parseInt(todayCases.getText().toString())));
 //                    deaths_w.setText(convert((long) Integer.parseInt(deaths.getText().toString())));
@@ -264,6 +267,6 @@ public class Statistics extends AppCompatActivity {
 //        tradThousand = convertLessThenOneThousand(thousands);
 //        result += tradThousand;
 //
-//        return result.replaceAll("^\\s+","").replaceAll("\\b\\s{2,}\\b", "");
+//        return result;
 //    }
 }
