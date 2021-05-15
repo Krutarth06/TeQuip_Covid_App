@@ -24,8 +24,6 @@ import org.eazegraph.lib.models.PieModel;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
-
 
 public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
@@ -34,41 +32,7 @@ public class Statistics extends AppCompatActivity {
     TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests,
             cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
     LinearLayout mainlayout;
-//    private static final String[] tens_names = {
-//            "",
-//            "Ten",
-//            "Twenty",
-//            "Thirty",
-//            "Forty",
-//            "Fifty",
-//            "Sixty",
-//            "Seventy",
-//            "Eighty",
-//            "Ninety",
-//    };
-//    private static final String[] num_names = {
-//            "",
-//            "Zero",
-//            "One",
-//            "Two",
-//            "Three",
-//            "Four",
-//            "Five",
-//            "Six",
-//            "Seven",
-//            "Eight",
-//            "Nine",
-//            "Ten",
-//            "Eleven",
-//            "Twelve",
-//            "Thirteen",
-//            "Fourteen",
-//            "Fifteen",
-//            "Sixteen",
-//            "Seventeen",
-//            "Eighteen",
-//            "Nineteen",
-//    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +75,17 @@ public class Statistics extends AppCompatActivity {
         });
         //     Main method to fetch and display data
         fetchData();
+        cases_w.setText(convert(Integer.parseInt(cases.getText().toString())));
+        todayCases_w.setText(convert(Integer.parseInt(todayCases.getText().toString())));
+        deaths_w.setText(convert(Integer.parseInt(deaths.getText().toString())));
+        todayDeaths_w.setText(convert(Integer.parseInt(todayDeaths.getText().toString())));
+        recovered_w.setText(convert(Integer.parseInt(recovered.getText().toString())));
+        todayRecovered_w.setText(convert(Integer.parseInt(todayRecovered.getText().toString())));
+        Active_w.setText(convert(Integer.parseInt(Active.getText().toString())));
+        critical_w.setText(convert(Integer.parseInt(critical.getText().toString())));
+        affectedCountries_w.setText(convert(Integer.parseInt(affectedCountries.getText().toString())));
+        tests_w.setText(convert(Integer.parseInt(tests.getText().toString())));
+
     }
 
     private void TrackCountries() {
@@ -140,6 +115,7 @@ public class Statistics extends AppCompatActivity {
                     affectedCountries.setText(jsonObject.getString("affectedCountries"));
                     tests.setText(jsonObject.getString("tests"));
 
+
                     //  Representation of data in pie chart
                     mPieChart.addPieSlice(new PieModel("Affected", Integer.parseInt(cases.getText().toString()), Color.parseColor("#ffcc00")));
                     mPieChart.addPieSlice(new PieModel("Death", Integer.parseInt(deaths.getText().toString()), Color.parseColor("#ff3300")));
@@ -147,24 +123,13 @@ public class Statistics extends AppCompatActivity {
                     mPieChart.addPieSlice(new PieModel("Active", Integer.parseInt(Active.getText().toString()), Color.parseColor("#00ccff")));
                     mPieChart.startAnimation();
 
+
                     // Stopping  the loading progressbar
 
                     archloader.stop();
                     archloader.setVisibility(View.GONE);
                     mainlayout.setVisibility(View.VISIBLE);
 
-
-
-//                    cases_w.setText(convert((long) Integer.parseInt(cases.getText().toString())));
-//                    todayCases_w.setText(convert((long) Integer.parseInt(todayCases.getText().toString())));
-//                    deaths_w.setText(convert((long) Integer.parseInt(deaths.getText().toString())));
-//                    todayDeaths_w.setText(convert((long) Integer.parseInt(todayDeaths.getText().toString())));
-//                    recovered_w.setText(convert((long) Integer.parseInt(recovered.getText().toString())));
-//                    todayRecovered_w.setText(convert((long) Integer.parseInt(todayRecovered.getText().toString())));
-//                    Active_w.setText(convert((long) Integer.parseInt(Active.getText().toString())));
-//                    critical_w.setText(convert((long) Integer.parseInt(critical.getText().toString())));
-//                    affectedCountries_w.setText(convert((long) Integer.parseInt(affectedCountries.getText().toString())));
-//                    tests_w.setText(convert((long) Integer.parseInt(tests.getText().toString())));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -186,87 +151,104 @@ public class Statistics extends AppCompatActivity {
         requestQueue.add(requestdata);
     }
 
-//    private static String convertLessThenOneThousand(int number) {
-//        String soFar;
-//        if (number % 100 < 20) {
-//            soFar = num_names[number % 10];
-//            number /= 100;
+
+    private String convert(int value) {
+        String str = String.valueOf(value);
+        int digits = str.length();
+        int remain;
+
+//        if (digits >= 10 && digits <= 12) {
+//            //billion
+//                int remain = value % 1000000000;
+//                value = value - remain;
+//                value = value / 1000000000;
+//                str = value + "B";
+//
+//        } else if (digits >= 7 && digits <= 9) {
+//            //million
+//            int remain = value % 1000000;
+//            value = value - remain;
+//            value = value / 1000000;
+//            str = value + "M";
+//
+//        } else if (digits >= 4 && digits <= 6) {
+//            //kilo
+//            int remain = value % 1000;
+//            value = value - remain;
+//            value = value / 1000;
+//            str = value + "K";
 //        } else {
-//            soFar = num_names[number % 10];
-//            number /= 10;
-//            soFar = tens_names[number % 10] + soFar;
-//            number /= 100;
+//            str = "marvad";
 //        }
-//        if (number == 0) {
-//            return soFar;
-//        }
-//        return num_names[number] + "Hundred" + soFar;
-//    }
-//
-//    public static String convert(Long number) {
-//        if (number == 0) {
-//            return "Zero";
-//        }
-//        String snumber = Long.toString(number);
-//
-//        String mask = "000000000000";
-//        DecimalFormat df = new DecimalFormat(mask);
-//        snumber = df.format(number);
-//
-//        int billions = Integer.parseInt(snumber.substring(0,3));
-//
-//        int millions = Integer.parseInt(snumber.substring(3,6));
-//
-//        int hundredThousands = Integer.parseInt(snumber.substring(6,9));
-//
-//        int thousands = Integer.parseInt(snumber.substring(9,12));
-//
-//        String tradbillions ;
-//        switch (billions){
-//            case 0:
-//                tradbillions ="";
-//                break;
-//
-//            case 1:
-//                tradbillions = convertLessThenOneThousand(billions)+ " billion ";
-//                break;
-//            default:
-//                tradbillions = convertLessThenOneThousand(billions)+ " billion ";
-//        }
-//        String result = tradbillions;
-//
-//        String tradmillions ;
-//        switch (millions){
-//            case 0:
-//                tradmillions ="";
-//                break;
-//
-//            case 1:
-//                tradmillions = convertLessThenOneThousand(millions)+ " million ";
-//                break;
-//            default:
-//                tradmillions = convertLessThenOneThousand(millions)+ " million ";
-//        }
-//         result += tradmillions;
-//
-//        String tradHundredThousands ;
-//        switch (hundredThousands){
-//            case 0:
-//                tradHundredThousands ="";
-//                break;
-//
-//            case 1:
-//                tradHundredThousands = " one thousand ";
-//                break;
-//            default:
-//                tradHundredThousands = convertLessThenOneThousand(hundredThousands)+ " thousand ";
-//        }
-//        result += tradHundredThousands;
-//
-//        String tradThousand;
-//        tradThousand = convertLessThenOneThousand(thousands);
-//        result += tradThousand;
-//
-//        return result;
-//    }
+        switch (digits) {
+
+            case 12: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 11: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 10: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 9: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 8: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 7: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 6: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+            case 5: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+            case 4: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+
+            default:
+                str = "";
+        }
+        return str;
+    }
 }
