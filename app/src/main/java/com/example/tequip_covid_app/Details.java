@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.leo.simplearcloader.SimpleArcLoader;
 
 import org.eazegraph.lib.charts.PieChart;
@@ -18,11 +18,12 @@ import org.eazegraph.lib.models.PieModel;
 public class Details extends AppCompatActivity {
     private int position_country;
     PieChart mPieChart;
-    Button trackCountries;
     SimpleArcLoader archloader;
-    TextView countryName, cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests,
-            cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
+    ImageView FlagImage;
+    TextView countryName, cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, tests,
+            cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, tests_w;
     LinearLayout mainlayout;
+    String flagUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class Details extends AppCompatActivity {
         position_country = intent.getIntExtra("position", 0);
         mainlayout = findViewById(R.id.main_linear_layout_id);
         mPieChart = findViewById(R.id.piechart);
-
+        FlagImage = findViewById(R.id.flag_image_id);
         countryName = findViewById(R.id.Title_name_id);
         cases = findViewById(R.id.TotalCases_Textview_id);
         todayCases = findViewById(R.id.TodayCases_textview_id);
@@ -56,6 +57,9 @@ public class Details extends AppCompatActivity {
         tests_w = findViewById(R.id.tests_words_textview_id);
         archloader = findViewById(R.id.loader);
 
+
+        flagUrl = Countries_list.country_model_list.get(position_country).getFlag();
+        Glide.with(this).load(flagUrl).into(FlagImage);
         countryName.setText(Countries_list.country_model_list.get(position_country).getCountry());
         cases.setText(Countries_list.country_model_list.get(position_country).getCases());
         todayCases.setText(Countries_list.country_model_list.get(position_country).getTodayCases());
@@ -66,7 +70,7 @@ public class Details extends AppCompatActivity {
         Active.setText(Countries_list.country_model_list.get(position_country).getActive());
         critical.setText(Countries_list.country_model_list.get(position_country).getCritical());
         tests.setText(Countries_list.country_model_list.get(position_country).getTests());
-        countryName.setText(Countries_list.country_model_list.get(position_country).getCountry());
+
 
         mPieChart.addPieSlice(new PieModel("Affected", Integer.parseInt(cases.getText().toString()), Color.parseColor("#ffcc00")));
         mPieChart.addPieSlice(new PieModel("Death", Integer.parseInt(deaths.getText().toString()), Color.parseColor("#ff3300")));

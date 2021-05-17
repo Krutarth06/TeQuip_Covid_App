@@ -29,8 +29,9 @@ public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
     Button trackCountries;
     SimpleArcLoader archloader;
-    TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests,
-            cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
+//    int cases_i, todayCases_i, deaths_i, todayDeaths_i, recovered_i, todayRecovered_i, Active_i, critical_i, affectedCountries_i, tests_i;
+    TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests, cases_w,
+            todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
     LinearLayout mainlayout;
 
 
@@ -75,16 +76,18 @@ public class Statistics extends AppCompatActivity {
         });
         //     Main method to fetch and display data
         fetchData();
-        cases_w.setText(convert(Integer.parseInt(cases.getText().toString())));
-        todayCases_w.setText(convert(Integer.parseInt(todayCases.getText().toString())));
-        deaths_w.setText(convert(Integer.parseInt(deaths.getText().toString())));
-        todayDeaths_w.setText(convert(Integer.parseInt(todayDeaths.getText().toString())));
-        recovered_w.setText(convert(Integer.parseInt(recovered.getText().toString())));
-        todayRecovered_w.setText(convert(Integer.parseInt(todayRecovered.getText().toString())));
-        Active_w.setText(convert(Integer.parseInt(Active.getText().toString())));
-        critical_w.setText(convert(Integer.parseInt(critical.getText().toString())));
-        affectedCountries_w.setText(convert(Integer.parseInt(affectedCountries.getText().toString())));
-        tests_w.setText(convert(Integer.parseInt(tests.getText().toString())));
+
+//        Number to word Conversion
+//        cases_w.setText(convert(cases_i));
+//        todayCases_w.setText(convert(todayCases_i));
+//        deaths_w.setText(convert(deaths_i));
+//        todayDeaths_w.setText(convert(todayDeaths_i));
+//        recovered_w.setText(convert(recovered_i));
+//        todayRecovered_w.setText(convert(todayRecovered_i));
+//        Active_w.setText(convert(Active_i));
+//        critical_w.setText(convert(critical_i));
+//        affectedCountries_w.setText(convert(affectedCountries_i));
+//        tests_w.setText(convert(tests_i));
 
     }
 
@@ -123,6 +126,18 @@ public class Statistics extends AppCompatActivity {
                     mPieChart.addPieSlice(new PieModel("Active", Integer.parseInt(Active.getText().toString()), Color.parseColor("#00ccff")));
                     mPieChart.startAnimation();
 
+//                  Numbers for number to word conversion
+//                    cases_i = Integer.parseInt(cases.getText().toString());
+//                    todayCases_i = Integer.parseInt(todayCases.getText().toString());
+//                    deaths_i = Integer.parseInt(deaths.getText().toString());
+//                    todayDeaths_i = Integer.parseInt(todayDeaths.getText().toString());
+//                    recovered_i = Integer.parseInt(recovered.getText().toString());
+//                    todayRecovered_i = Integer.parseInt(todayRecovered.getText().toString());
+//                    Active_i = Integer.parseInt(Active.getText().toString());
+//                    critical_i = Integer.parseInt(critical.getText().toString());
+//                    affectedCountries_i = Integer.parseInt(affectedCountries.getText().toString());
+//                    tests_i = Integer.parseInt(tests.getText().toString());
+
 
                     // Stopping  the loading progressbar
 
@@ -151,104 +166,104 @@ public class Statistics extends AppCompatActivity {
         requestQueue.add(requestdata);
     }
 
-
-    private String convert(int value) {
-        String str = String.valueOf(value);
-        int digits = str.length();
-        int remain;
-
-//        if (digits >= 10 && digits <= 12) {
-//            //billion
-//                int remain = value % 1000000000;
+//      Number to word converter method
+//    private String convert(int value) {
+//        String str = String.valueOf(value);
+//        int digits = str.length();
+//        int remain;
+//
+////        if (digits >= 10 && digits <= 12) {
+////            //billion
+////                int remain = value % 1000000000;
+////                value = value - remain;
+////                value = value / 1000000000;
+////                str = value + "B";
+////
+////        } else if (digits >= 7 && digits <= 9) {
+////            //million
+////            int remain = value % 1000000;
+////            value = value - remain;
+////            value = value / 1000000;
+////            str = value + "M";
+////
+////        } else if (digits >= 4 && digits <= 6) {
+////            //kilo
+////            int remain = value % 1000;
+////            value = value - remain;
+////            value = value / 1000;
+////            str = value + "K";
+////        } else {
+////            str = "marvad";
+////        }
+//        switch (digits) {
+//
+//            case 12: {
+//                remain = value % 1000000000;
 //                value = value - remain;
 //                value = value / 1000000000;
 //                str = value + "B";
+//            }
+//            break;
+//            case 11: {
+//                remain = value % 1000000000;
+//                value = value - remain;
+//                value = value / 1000000000;
+//                str = value + "B";
+//            }
+//            break;
+//            case 10: {
+//                remain = value % 1000000000;
+//                value = value - remain;
+//                value = value / 1000000000;
+//                str = value + "B";
+//            }
+//            break;
+//            case 9: {
+//                remain = value % 1000000;
+//                value = value - remain;
+//                value = value / 1000000;
+//                str = value + "M";
+//            }
+//            break;
+//            case 8: {
+//                remain = value % 1000000;
+//                value = value - remain;
+//                value = value / 1000000;
+//                str = value + "M";
+//            }
+//            break;
+//            case 7: {
+//                remain = value % 1000000;
+//                value = value - remain;
+//                value = value / 1000000;
+//                str = value + "M";
+//            }
+//            break;
+//            case 6: {
+//                remain = value % 1000;
+//                value = value - remain;
+//                value = value / 1000;
+//                str = value + "K";
+//            }
+//            break;
+//            case 5: {
+//                remain = value % 1000;
+//                value = value - remain;
+//                value = value / 1000;
+//                str = value + "K";
+//            }
+//            break;
+//            case 4: {
+//                remain = value % 1000;
+//                value = value - remain;
+//                value = value / 1000;
+//                str = value + "K";
+//            }
+//            break;
 //
-//        } else if (digits >= 7 && digits <= 9) {
-//            //million
-//            int remain = value % 1000000;
-//            value = value - remain;
-//            value = value / 1000000;
-//            str = value + "M";
-//
-//        } else if (digits >= 4 && digits <= 6) {
-//            //kilo
-//            int remain = value % 1000;
-//            value = value - remain;
-//            value = value / 1000;
-//            str = value + "K";
-//        } else {
-//            str = "marvad";
+//            default:
+//                str = "";
 //        }
-        switch (digits) {
-
-            case 12: {
-                remain = value % 1000000000;
-                value = value - remain;
-                value = value / 1000000000;
-                str = value + "B";
-            }
-            break;
-            case 11: {
-                remain = value % 1000000000;
-                value = value - remain;
-                value = value / 1000000000;
-                str = value + "B";
-            }
-            break;
-            case 10: {
-                remain = value % 1000000000;
-                value = value - remain;
-                value = value / 1000000000;
-                str = value + "B";
-            }
-            break;
-            case 9: {
-                remain = value % 1000000;
-                value = value - remain;
-                value = value / 1000000;
-                str = value + "M";
-            }
-            break;
-            case 8: {
-                remain = value % 1000000;
-                value = value - remain;
-                value = value / 1000000;
-                str = value + "M";
-            }
-            break;
-            case 7: {
-                remain = value % 1000000;
-                value = value - remain;
-                value = value / 1000000;
-                str = value + "M";
-            }
-            break;
-            case 6: {
-                remain = value % 1000;
-                value = value - remain;
-                value = value / 1000;
-                str = value + "K";
-            }
-            break;
-            case 5: {
-                remain = value % 1000;
-                value = value - remain;
-                value = value / 1000;
-                str = value + "K";
-            }
-            break;
-            case 4: {
-                remain = value % 1000;
-                value = value - remain;
-                value = value / 1000;
-                str = value + "K";
-            }
-            break;
-
-            default:
-                str = "";
-        }
-        return str;
-    }
+//        return str;
+//    }
 }

@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TeQuip_Covid_App">
-        <activity android:name=".Details"></activity>
+        <activity android:name=".stateDetails"></activity>
+        <activity android:name=".States_list" />
+        <activity android:name=".Details" />
         <activity android:name=".Countries_list" />
         <activity android:name=".Statistics" />
         <activity android:name=".MainActivity">

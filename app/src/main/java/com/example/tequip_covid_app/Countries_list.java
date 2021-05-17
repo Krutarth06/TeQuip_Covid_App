@@ -51,7 +51,7 @@ public class Countries_list extends AppCompatActivity {
         CountriesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), Details.class).putExtra("position",position));
+                startActivity(new Intent(getApplicationContext(), Details.class).putExtra("position", position));
             }
         });
 
