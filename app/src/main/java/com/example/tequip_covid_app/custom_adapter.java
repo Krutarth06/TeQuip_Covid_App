@@ -67,13 +67,13 @@ public class custom_adapter extends ArrayAdapter<Model_class_country> {
                     List<Model_class_country> resultsModel = new ArrayList<>();
                     String searchStr = constraint.toString().toLowerCase();
 
-                for (Model_class_country itemsModel : country_model_list) {
-                    if (itemsModel.getCountry().toLowerCase().contains(searchStr)){
-                        resultsModel.add(itemsModel);
+                    for (Model_class_country itemsModel : country_model_list) {
+                        if (itemsModel.getCountry().toLowerCase().contains(searchStr)) {
+                            resultsModel.add(itemsModel);
+                        }
+                        filterResults.count = resultsModel.size();
+                        filterResults.values = resultsModel;
                     }
-                    filterResults.count = resultsModel.size();
-                    filterResults.values = resultsModel;
-                }
                 }
                 return filterResults;
             }
@@ -86,7 +86,7 @@ public class custom_adapter extends ArrayAdapter<Model_class_country> {
 
             }
         };
-        return  filter;
+        return filter;
     }
 }
 

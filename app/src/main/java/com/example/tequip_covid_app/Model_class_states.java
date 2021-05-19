@@ -1,7 +1,7 @@
 package com.example.tequip_covid_app;
 
 public class Model_class_states {
-    public String state, totalCasesIndia, totalCasesForeign,recovered,deaths,totalCases;
+    public String state, totalCasesIndia, totalCasesForeign, recovered, deaths, totalCases;
 
 //    public Model_class_states() {
 //    }

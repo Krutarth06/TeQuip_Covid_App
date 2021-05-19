@@ -29,7 +29,7 @@ public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
     Button trackCountries;
     SimpleArcLoader archloader;
-//    int cases_i, todayCases_i, deaths_i, todayDeaths_i, recovered_i, todayRecovered_i, Active_i, critical_i, affectedCountries_i, tests_i;
+    //    int cases_i, todayCases_i, deaths_i, todayDeaths_i, recovered_i, todayRecovered_i, Active_i, critical_i, affectedCountries_i, tests_i;
     TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests, cases_w,
             todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, affectedCountries_w, tests_w;
     LinearLayout mainlayout;

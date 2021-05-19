@@ -18,8 +18,9 @@ public class state_custom_adapter extends ArrayAdapter<Model_class_states> {
     private Context context;
     private List<Model_class_states> state_model_list;
     private List<Model_class_states> state_model_list_filtered;
-    public state_custom_adapter(Context context,  List<Model_class_states> state_model_list) {
-        super(context,  R.layout.list_item, state_model_list);
+
+    public state_custom_adapter(Context context, List<Model_class_states> state_model_list) {
+        super(context, R.layout.list_item, state_model_list);
         this.context = context;
         this.state_model_list = state_model_list;
         this.state_model_list_filtered = state_model_list;
@@ -33,6 +34,7 @@ public class state_custom_adapter extends ArrayAdapter<Model_class_states> {
         state_name.setText(state_model_list_filtered.get(position).getState());
         return view;
     }
+
     @Override
     public int getCount() {
 
@@ -44,6 +46,7 @@ public class state_custom_adapter extends ArrayAdapter<Model_class_states> {
     public Model_class_states getItem(int position) {
         return state_model_list_filtered.get(position);
     }
+
     @Override
     public long getItemId(int position) {
         return position;
