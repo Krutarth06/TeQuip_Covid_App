@@ -18,14 +18,14 @@
         android:id="@+id/main_linear_layout_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="#737373"
         android:orientation="vertical"
         android:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple">
+            android:background="#262626">
 
             <TextView
                 android:id="@+id/Title_name_id"
@@ -35,7 +35,7 @@
                 android:padding="15dp"
                 android:text="Country Name"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -56,7 +56,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="#333399"
+            android:backgroundTint="#262626"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1.5"
-                    app:egInnerPaddingColor="#333399"
+                    app:egInnerPaddingColor="#262626"
                     app:egUsePieRotation="true"
                     app:egValueTextColor="#ffffff" />
 
@@ -184,7 +184,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#808080"
+            android:backgroundTint="#262626"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
@@ -205,7 +205,7 @@
                         android:layout_marginTop="10dp"
                         android:text="Statistics"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -213,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/yellow"
+                        android:backgroundTint="@color/yellow_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -222,7 +222,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Affected"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -232,7 +232,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -241,7 +241,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -250,7 +250,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/red"
+                        android:backgroundTint="@color/red_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -259,7 +259,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Death"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -269,7 +269,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -278,7 +278,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -287,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/light_green"
+                        android:backgroundTint="@color/light_green_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -296,7 +296,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Recovered"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -306,7 +306,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -315,7 +315,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -324,7 +324,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/light_blue"
+                        android:backgroundTint="@color/light_blue_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -333,7 +333,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Active"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_blue"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -343,7 +343,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_blue"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -352,7 +352,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_blue"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -362,7 +362,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/yellow"
+                        android:backgroundTint="@color/purple_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -371,7 +371,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Critical"
-                            android:textColor="@color/white"
+                            android:textColor="@color/purple_text"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -381,7 +381,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/purple_text"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -390,7 +390,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/purple_text"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -399,7 +399,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/red"
+                        android:backgroundTint="#c2c2d6"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -408,7 +408,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Tests"
-                            android:textColor="@color/white"
+                            android:textColor="#5c5c8a"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -418,7 +418,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="#5c5c8a"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -427,7 +427,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="#5c5c8a"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -439,7 +439,7 @@
                         android:layout_marginTop="20dp"
                         android:text="Today's Statistics"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
 
@@ -448,7 +448,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/yellow"
+                        android:backgroundTint="@color/yellow_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -457,7 +457,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Today Cases"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -467,7 +467,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -476,7 +476,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/yellow"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -485,7 +485,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/red"
+                        android:backgroundTint="@color/red_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -494,7 +494,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Today Deaths"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -504,7 +504,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -513,7 +513,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/red"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -522,7 +522,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/data_representation"
-                        android:backgroundTint="@color/light_green"
+                        android:backgroundTint="@color/light_green_bg"
                         android:elevation="10dp"
                         android:orientation="vertical"
                         android:padding="10dp">
@@ -531,7 +531,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Today Recovered"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -541,7 +541,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="0"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -550,7 +550,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
-                            android:textColor="@color/white"
+                            android:textColor="@color/light_green"
                             android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>

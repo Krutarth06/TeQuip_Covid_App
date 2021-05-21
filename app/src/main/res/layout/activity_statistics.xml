@@ -29,7 +29,7 @@
             android:padding="15dp"
             android:text="Global Statistics"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -188,7 +188,7 @@
                         android:layout_marginTop="10dp"
                         android:text="Statistics"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -460,7 +460,7 @@
                         android:layout_marginTop="20dp"
                         android:text="Today's Statistics"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
 
@@ -577,24 +577,5 @@
                 </LinearLayout>
             </ScrollView>
         </androidx.cardview.widget.CardView>
-
-        <Button
-            android:id="@+id/Track_countries_btn_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/btn_purple"
-            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-            android:paddingStart="20sp"
-            android:paddingEnd="20sp"
-            android:text="Track Countries"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>

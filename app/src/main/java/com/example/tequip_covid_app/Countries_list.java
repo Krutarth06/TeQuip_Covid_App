@@ -123,7 +123,7 @@ public class Countries_list extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 arcLoader.stop();
                 arcLoader.setVisibility(View.GONE);
-                Toast.makeText(Countries_list.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Countries_list.this, "Please check your Internet connection and try again later", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);

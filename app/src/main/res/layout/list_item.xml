@@ -9,5 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Country Name"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 </LinearLayout>

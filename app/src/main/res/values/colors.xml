@@ -12,4 +12,32 @@
     <color name="purple">#6600cc</color>
     <color name="red">#ff3300</color>
     <color name="yellow">#ffcc00</color>
+    <color name="light_blue_bg">#e6faff</color>
+    <color name="light_green_bg">#e6ffe6</color>
+    <color name="red_bg">#ffc2b3</color>
+    <color name="yellow_bg">#fff5cc</color>
+    <color name="purple_bg">#ffccff</color>
+    <color name="purple_text">#b300b3</color>
+<!--   dots inactive color-->
+    <color name="inactive_one">#FF000000</color>
+    <color name="inactive_two">#FF000000</color>
+    <color name="inactive_three">#FF000000</color>
+
+    <!--   dots active color-->
+    <color name="active_one">#ff3300</color>
+    <color name="active_two">#ff3300</color>
+    <color name="active_three">#ff3300</color>
+
+    <array name="active">
+        <item>@color/active_one</item>
+        <item>@color/active_two</item>
+        <item>@color/active_three</item>
+    </array>
+
+    <array name="inactive">
+        <item>@color/inactive_one</item>
+        <item>@color/inactive_two</item>
+        <item>@color/inactive_three</item>
+    </array>
+
 </resources>

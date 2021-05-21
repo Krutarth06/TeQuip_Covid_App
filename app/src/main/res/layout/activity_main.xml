@@ -1,170 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffff"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:scaleType="fitXY"
             android:src="@drawable/virus2" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="30dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Prevention"
-            android:textSize="24sp"
-            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Are you feeling sick?"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:textSize="14sp"
+                android:text="If you are feeling sick with any of covid-19 symptoms please Call or Email on following helpline immediately for help."
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp">
 
-                <ImageView
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/call_btn"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_prevention1" />
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:backgroundTint="#FF4D58"
+                    android:drawableStart="@drawable/call_image"
+                    android:drawablePadding="10dp"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:singleLine="true"
+                    android:text="Call Now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/email_btn"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="Avoid Close Contact"
-                    android:textAlignment="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:backgroundTint="#4D79FF"
+                    android:drawableStart="@drawable/sms_image"
+                    android:drawablePadding="10dp"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:singleLine="true"
+                    android:text="Send Email"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_prevention2" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="Clean your hands often"
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:text="Prevention"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
 
-                <ImageView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_prevention3" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_prevention1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Avoid Close Contact"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="Wear a face mask"
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_prevention2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Clean your hands often"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_prevention3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Wear a face mask"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/symptom_banner_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_testbanner" />
+
+            <Button
+                android:id="@+id/See_stat_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_purple"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:text="Global Statistics  🌎"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/countries_stat_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_purple"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:text="Country Wise Statistics  🏡"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/See_states_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_purple"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:text="State Wise Statistics For India  🇮🇳"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/Cowin_portal_btn_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_purple"
+                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:text="Book your slot for vaccination  💉"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_testbanner" />
-
-        <Button
-            android:id="@+id/See_stat_btn_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_purple"
-            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-            android:paddingStart="20sp"
-            android:paddingEnd="20sp"
-            android:text="See Statistics"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-        <Button
-            android:id="@+id/See_states_btn_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_purple"
-            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-            android:layout_marginTop="10dp"
-            android:paddingStart="20sp"
-            android:paddingEnd="20sp"
-            android:text="See States Statistics"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-        <Button
-            android:id="@+id/Cowin_portal_btn_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_purple"
-            android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-            android:layout_marginTop="10dp"
-            android:paddingStart="20sp"
-            android:paddingEnd="20sp"
-            android:text="Book your slot for vaccination"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -27,7 +27,6 @@ import org.json.JSONObject;
 
 public class Statistics extends AppCompatActivity {
     PieChart mPieChart;
-    Button trackCountries;
     SimpleArcLoader archloader;
     //    int cases_i, todayCases_i, deaths_i, todayDeaths_i, recovered_i, todayRecovered_i, Active_i, critical_i, affectedCountries_i, tests_i;
     TextView cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, affectedCountries, tests, cases_w,
@@ -66,14 +65,6 @@ public class Statistics extends AppCompatActivity {
         archloader = findViewById(R.id.loader);
 
 
-//      Initializing and functioning of button;
-        trackCountries = findViewById(R.id.Track_countries_btn_id);
-        trackCountries.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TrackCountries();
-            }
-        });
         //     Main method to fetch and display data
         fetchData();
 
@@ -88,12 +79,6 @@ public class Statistics extends AppCompatActivity {
 //        critical_w.setText(convert(critical_i));
 //        affectedCountries_w.setText(convert(affectedCountries_i));
 //        tests_w.setText(convert(tests_i));
-
-    }
-
-    private void TrackCountries() {
-        Intent intent = new Intent(this, Countries_list.class);
-        startActivity(intent);
 
     }
 
@@ -159,7 +144,7 @@ public class Statistics extends AppCompatActivity {
                 archloader.stop();
                 archloader.setVisibility(View.GONE);
                 mainlayout.setVisibility(View.VISIBLE);
-                Toast.makeText(Statistics.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Statistics.this, "Please check your Internet connection and try again later", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -167,11 +152,11 @@ public class Statistics extends AppCompatActivity {
     }
 
 //      Number to word converter method
-//    private String convert(int value) {
-//        String str = String.valueOf(value);
-//        int digits = str.length();
-//        int remain;
-//
+    private String convert(int value) {
+        String str = String.valueOf(value);
+        int digits = str.length();
+        int remain;
+
 ////        if (digits >= 10 && digits <= 12) {
 ////            //billion
 ////                int remain = value % 1000000000;
@@ -195,75 +180,75 @@ public class Statistics extends AppCompatActivity {
 ////        } else {
 ////            str = "marvad";
 ////        }
-//        switch (digits) {
-//
-//            case 12: {
-//                remain = value % 1000000000;
-//                value = value - remain;
-//                value = value / 1000000000;
-//                str = value + "B";
-//            }
-//            break;
-//            case 11: {
-//                remain = value % 1000000000;
-//                value = value - remain;
-//                value = value / 1000000000;
-//                str = value + "B";
-//            }
-//            break;
-//            case 10: {
-//                remain = value % 1000000000;
-//                value = value - remain;
-//                value = value / 1000000000;
-//                str = value + "B";
-//            }
-//            break;
-//            case 9: {
-//                remain = value % 1000000;
-//                value = value - remain;
-//                value = value / 1000000;
-//                str = value + "M";
-//            }
-//            break;
-//            case 8: {
-//                remain = value % 1000000;
-//                value = value - remain;
-//                value = value / 1000000;
-//                str = value + "M";
-//            }
-//            break;
-//            case 7: {
-//                remain = value % 1000000;
-//                value = value - remain;
-//                value = value / 1000000;
-//                str = value + "M";
-//            }
-//            break;
-//            case 6: {
-//                remain = value % 1000;
-//                value = value - remain;
-//                value = value / 1000;
-//                str = value + "K";
-//            }
-//            break;
-//            case 5: {
-//                remain = value % 1000;
-//                value = value - remain;
-//                value = value / 1000;
-//                str = value + "K";
-//            }
-//            break;
-//            case 4: {
-//                remain = value % 1000;
-//                value = value - remain;
-//                value = value / 1000;
-//                str = value + "K";
-//            }
-//            break;
-//
-//            default:
-//                str = "";
-//        }
-//        return str;
-//    }
+        switch (digits) {
+
+            case 12: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 11: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 10: {
+                remain = value % 1000000000;
+                value = value - remain;
+                value = value / 1000000000;
+                str = value + "B";
+            }
+            break;
+            case 9: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 8: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 7: {
+                remain = value % 1000000;
+                value = value - remain;
+                value = value / 1000000;
+                str = value + "M";
+            }
+            break;
+            case 6: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+            case 5: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+            case 4: {
+                remain = value % 1000;
+                value = value - remain;
+                value = value / 1000;
+                str = value + "K";
+            }
+            break;
+
+            default:
+                str = "";
+        }
+        return str;
+    }
 }

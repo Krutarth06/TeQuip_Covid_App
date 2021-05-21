@@ -112,7 +112,7 @@ public class States_list extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 arcLoader.stop();
                 arcLoader.setVisibility(View.GONE);
-                Toast.makeText(States_list.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(States_list.this, "Please check your Internet connection and try again later", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
