@@ -95,7 +95,7 @@ public class intro_slider_main extends AppCompatActivity {
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226"));
-            dots[i].setTextSize(50);
+            dots[i].setTextSize(40);
             dots[i].setTextColor(inactiveColors[currentPage]);
             layoutDots.addView(dots[i]);
         }

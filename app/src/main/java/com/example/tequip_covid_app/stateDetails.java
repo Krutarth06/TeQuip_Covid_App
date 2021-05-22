@@ -64,7 +64,7 @@ public class stateDetails extends AppCompatActivity {
         deaths_w.setText(Converter.format(Long.parseLong(deaths.getText().toString())));
         totalCases_w.setText(Converter.format(Long.parseLong(totalCases.getText().toString())));
 
-        mPieChart.addPieSlice(new PieModel("Affected", Integer.parseInt(totalCases.getText().toString()), Color.parseColor("#ffcc00")));
+        mPieChart.addPieSlice(new PieModel("Affected", Integer.parseInt(totalCases.getText().toString()), Color.parseColor("#ffaf1a")));
         mPieChart.addPieSlice(new PieModel("Death", Integer.parseInt(deaths.getText().toString()), Color.parseColor("#ff3300")));
         mPieChart.addPieSlice(new PieModel("Recovered", Integer.parseInt(recovered.getText().toString()), Color.parseColor("#00e600")));
         mPieChart.startAnimation();

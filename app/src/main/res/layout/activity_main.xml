@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="Are you feeling sick?"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -52,7 +52,6 @@
                     android:background="@drawable/btn_design"
                     android:backgroundTint="#FF4D58"
                     android:drawableStart="@drawable/call_image"
-                    android:drawablePadding="10dp"
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -60,7 +59,7 @@
                     android:text="Call Now"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <Button
@@ -72,8 +71,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/btn_design"
                     android:backgroundTint="#4D79FF"
-                    android:drawableStart="@drawable/sms_image"
-                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_email_24"
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -81,7 +79,7 @@
                     android:text="Send Email"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -89,7 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Prevention"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -183,7 +181,7 @@
                 android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Button
@@ -199,7 +197,7 @@
                 android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Button
@@ -215,7 +213,7 @@
                 android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Button
@@ -231,7 +229,7 @@
                 android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
