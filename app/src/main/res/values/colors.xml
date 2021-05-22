@@ -18,15 +18,17 @@
     <color name="yellow_bg">#fff5cc</color>
     <color name="purple_bg">#ffccff</color>
     <color name="purple_text">#b300b3</color>
+    <color name="greyish_blue">#5c5c8a</color>
 <!--   dots inactive color-->
-    <color name="inactive_one">#FF000000</color>
-    <color name="inactive_two">#FF000000</color>
-    <color name="inactive_three">#FF000000</color>
+    <color name="inactive_one">#808080</color>
+    <color name="inactive_two">#808080</color>
+    <color name="inactive_three">#808080</color>
 
     <!--   dots active color-->
-    <color name="active_one">#ff3300</color>
-    <color name="active_two">#ff3300</color>
-    <color name="active_three">#ff3300</color>
+    <color name="active_one">#ffffff</color>
+    <color name="active_two">#ffffff</color>
+    <color name="active_three">#ffffff</color>
+
 
     <array name="active">
         <item>@color/active_one</item>

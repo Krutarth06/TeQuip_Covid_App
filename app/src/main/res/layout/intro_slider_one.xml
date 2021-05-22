@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="INTRO_SLIDER_ONE"
-    android:textSize="26sp"
-    android:gravity="center"/>
-</LinearLayout>
+    android:background="#16c1ed"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/stats_imageview_id"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/stats" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stats_imageview_id"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:text="Check live Covid-19 statistics of any country around the globe and global Covid-19 statistics, also check live Covid-19 statistics for every state in India."
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</RelativeLayout>

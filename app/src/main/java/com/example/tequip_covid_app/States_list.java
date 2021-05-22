@@ -9,6 +9,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,6 +33,8 @@ public class States_list extends AppCompatActivity {
     EditText Search_view;
     ListView StatesListView;
     SimpleArcLoader arcLoader;
+    LinearLayout mainLayout;
+    ImageView back_btn;
 
     public static List<Model_class_states> states_model_list = new ArrayList<>();
     Model_class_states ModelState;
@@ -43,6 +47,8 @@ public class States_list extends AppCompatActivity {
         Search_view = findViewById(R.id.search_bar_id_states);
         StatesListView = findViewById(R.id.states_list_view_id);
         arcLoader = findViewById(R.id.loader2);
+        back_btn = findViewById(R.id.back_btn_id);
+        mainLayout = findViewById(R.id.mainLayout_stateList_id);
 
         fetchData();
         StatesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,6 +73,12 @@ public class States_list extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
+            }
+        });
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
     }
@@ -100,6 +112,7 @@ public class States_list extends AppCompatActivity {
                     }
                     arcLoader.stop();
                     arcLoader.setVisibility(View.GONE);
+                    mainLayout.setVisibility(View.VISIBLE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     arcLoader.stop();
@@ -112,7 +125,7 @@ public class States_list extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 arcLoader.stop();
                 arcLoader.setVisibility(View.GONE);
-                Toast.makeText(States_list.this, "Please check your Internet connection and try again later", Toast.LENGTH_SHORT).show();
+                Toast.makeText(States_list.this, "Please switch on your Wifi or Mobile Data and try again later", Toast.LENGTH_SHORT).show();
             }
         });
         RequestQueue requestQueue = Volley.newRequestQueue(this);

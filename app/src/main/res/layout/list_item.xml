@@ -10,6 +10,5 @@
         android:padding="10dp"
         android:text="Country Name"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textStyle="bold" />
 </LinearLayout>

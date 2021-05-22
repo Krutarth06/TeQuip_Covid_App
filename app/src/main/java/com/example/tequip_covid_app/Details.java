@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class Details extends AppCompatActivity {
     private int position_country;
     PieChart mPieChart;
     SimpleArcLoader archloader;
-    ImageView FlagImage;
+    ImageView FlagImage, back_btn;
     TextView countryName, cases, todayCases, deaths, todayDeaths, recovered, todayRecovered, Active, critical, tests,
             cases_w, todayCases_w, deaths_w, todayDeaths_w, recovered_w, todayRecovered_w, Active_w, critical_w, tests_w;
     LinearLayout mainlayout;
@@ -29,6 +30,7 @@ public class Details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        back_btn = findViewById(R.id.back_btn_id);
 
         Intent intent = getIntent();
         position_country = intent.getIntExtra("position", 0);
@@ -57,6 +59,12 @@ public class Details extends AppCompatActivity {
         tests_w = findViewById(R.id.tests_words_textview_id);
         archloader = findViewById(R.id.loader);
 
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Countries_list.class));
+            }
+        });
 
         flagUrl = Countries_list.country_model_list.get(position_country).getFlag();
         Glide.with(this).load(flagUrl).into(FlagImage);
@@ -78,16 +86,15 @@ public class Details extends AppCompatActivity {
         mPieChart.addPieSlice(new PieModel("Active", Integer.parseInt(Active.getText().toString()), Color.parseColor("#00ccff")));
         mPieChart.startAnimation();
 
-//        cases_w.setText(Statistics.convert(Integer.parseInt(cases.getText().toString())));
-//        todayCases_w.setText(Statistics.convert(Integer.parseInt(todayCases.getText().toString())));
-//        deaths_w.setText(Statistics.convert(Integer.parseInt(deaths.getText().toString())));
-//        todayDeaths_w.setText(Statistics.convert(Integer.parseInt(todayDeaths.getText().toString())));
-//        recovered_w.setText(Statistics.convert(Integer.parseInt(recovered.getText().toString())));
-//        todayRecovered_w.setText(Statistics.convert(Integer.parseInt(todayRecovered.getText().toString())));
-//        Active_w.setText(Statistics.convert(Integer.parseInt(Active.getText().toString())));
-//        critical_w.setText(Statistics.convert(Integer.parseInt(critical.getText().toString())));
-//        affectedCountries_w.setText(Statistics.convert(Integer.parseInt(affectedCountries.getText().toString())));
-//        tests_w.setText(Statistics.convert(Integer.parseInt(tests.getText().toString())));
+        cases_w.setText(Converter.format(Long.parseLong(cases.getText().toString())));
+        todayCases_w.setText(Converter.format(Long.parseLong(todayCases.getText().toString())));
+        deaths_w.setText(Converter.format(Long.parseLong(deaths.getText().toString())));
+        todayDeaths_w.setText(Converter.format(Long.parseLong(todayDeaths.getText().toString())));
+        recovered_w.setText(Converter.format(Long.parseLong(recovered.getText().toString())));
+        todayRecovered_w.setText(Converter.format(Long.parseLong(todayRecovered.getText().toString())));
+        Active_w.setText(Converter.format(Long.parseLong(Active.getText().toString())));
+        critical_w.setText(Converter.format(Long.parseLong(critical.getText().toString())));
+        tests_w.setText(Converter.format(Long.parseLong(tests.getText().toString())));
     }
 
 }

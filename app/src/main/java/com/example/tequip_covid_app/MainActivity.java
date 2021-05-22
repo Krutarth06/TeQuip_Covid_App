@@ -86,14 +86,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     private void call() {
         String number = "1075";
-        Intent intent = new Intent(Intent.ACTION_CALL);
+        Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:" + number));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
         startActivity(intent);
     }
 

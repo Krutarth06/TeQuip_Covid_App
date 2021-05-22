@@ -74,7 +74,7 @@ public class intro_slider_main extends AppCompatActivity {
         public void onPageSelected(int position) {
             addBottomDots(position);
             if (position == Layouts.length - 1) {
-                next.setText("Start");
+                next.setText("Get Started");
             } else {
                 next.setText("Next");
             }

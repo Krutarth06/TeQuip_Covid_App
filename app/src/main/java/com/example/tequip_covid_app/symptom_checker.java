@@ -29,4 +29,13 @@ public class symptom_checker extends AppCompatActivity {
             return true;
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        if (SymptomChecker.canGoBack()) {
+            SymptomChecker.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
