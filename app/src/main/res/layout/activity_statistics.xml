@@ -17,7 +17,7 @@
         android:id="@+id/main_linear_layout_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="@color/white"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -33,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
+                android:contentDescription="@string/back_btn"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
 
             <TextView
@@ -40,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="Global Statistics"
+                android:text="@string/global_statistics1"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -71,7 +72,7 @@
                     android:layout_weight="1.5"
                     app:egInnerPaddingColor="#333399"
                     app:egUsePieRotation="true"
-                    app:egValueTextColor="#ffffff" />
+                    app:egValueTextColor="@color/white" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -98,7 +99,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Affected"
+                            android:text="@string/affected"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -120,7 +121,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Death"
+                            android:text="@string/death"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -142,7 +143,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Recovered"
+                            android:text="@string/recovered"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -163,7 +164,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Active"
+                            android:text="@string/active"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -181,7 +182,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
-            android:backgroundTint="#808080"
+            android:backgroundTint="@color/grey"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
@@ -200,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Statistics"
+                        android:text="@string/statistics"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -218,26 +219,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Affected"
+                            android:text="@string/affected"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TotalCases_Textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/TotalCases_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TotalCases_Textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -256,26 +257,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Death"
+                            android:text="@string/death"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/death_Textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/death_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/death_Textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -294,26 +295,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Recovered"
+                            android:text="@string/recovered"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/recovered_Textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/recovered_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/recovered_Textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -332,26 +333,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Active"
+                            android:text="@string/active"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/active_Textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/active_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/active_Textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -371,26 +372,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Critical"
+                            android:text="@string/critical"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/critical_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/critical_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/critical_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -409,26 +410,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Tests"
+                            android:text="@string/tests"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tests_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tests_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tests_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -448,26 +449,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Affected countries"
+                            android:text="@string/affected_countries"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/AffectedCountries_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/AffectedCountries_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/AffectedCountries_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -479,7 +480,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="20dp"
-                        android:text="Today's Statistics"
+                        android:text="@string/today_s_statistics"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -498,26 +499,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Today Cases"
+                            android:text="@string/today_cases"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TodayCases_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/TodayCases_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TodayCases_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -536,26 +537,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Today Deaths"
+                            android:text="@string/today_deaths"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/todayDeaths_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/todayDeaths_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/todayDeaths_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -574,26 +575,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Today Recovered"
+                            android:text="@string/today_recovered"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TodayRecovered_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/TodayRecovered_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TodayRecovered_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />

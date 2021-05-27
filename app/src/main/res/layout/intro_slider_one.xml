@@ -3,7 +3,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16c1ed"
+    android:background="#69CCAF"
     android:orientation="horizontal">
 
     <ImageView
@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/stats" />
+        android:src="@drawable/statistics"
+        android:contentDescription="@string/check_live_global_covid_19_statistics_and_live_covid_19_statistics_for_every_state_in_india" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,8 +20,8 @@
         android:layout_below="@id/stats_imageview_id"
         android:padding="20dp"
         android:textAlignment="center"
-        android:text="Check live Covid-19 statistics of any country around the globe and global Covid-19 statistics, also check live Covid-19 statistics for every state in India."
-        android:textColor="@color/white"
+        android:text="@string/check_live_global_covid_19_statistics_and_live_covid_19_statistics_for_every_state_in_india"
+        android:textColor="#161659"
         android:textSize="16sp"
         android:textStyle="bold" />
 </RelativeLayout>

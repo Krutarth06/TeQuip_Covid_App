@@ -33,7 +33,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:contentDescription="@string/back_btn" />
 
             <TextView
                 android:id="@+id/Title_name_id"
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/purple"
                 android:padding="15dp"
-                android:text="State Name"
+                android:text="@string/state_name"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -99,7 +100,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Affected"
+                            android:text="@string/affected"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -121,7 +122,7 @@
                             android:layout_marginStart="10dp"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:text="Death"
+                            android:text="@string/death"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             android:textStyle="bold" />
@@ -163,7 +164,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:backgroundTint="#808080"
+            android:backgroundTint="@color/grey"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
@@ -182,7 +183,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Statistics"
+                        android:text="@string/statistics"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -206,7 +207,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/TotalCases_Textview_id"
+                            android:id="@+id/TotalCases_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -216,7 +217,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/TotalCases_words_Textview_id"
+                            android:id="@+id/TotalCases_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
@@ -244,7 +245,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/death_Textview_id"
+                            android:id="@+id/death_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -254,7 +255,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/death_words_Textview_id"
+                            android:id="@+id/death_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
@@ -282,7 +283,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/recovered_Textview_id"
+                            android:id="@+id/recovered_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -292,7 +293,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/recovered_words_Textview_id"
+                            android:id="@+id/recovered_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Zero"
@@ -320,7 +321,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/affected_Indians_textview_id"
+                            android:id="@+id/affected_Indians_words_Textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -330,10 +331,10 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/affected_Indians_words_Textview_id"
+                            android:id="@+id/affected_Indians_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -353,26 +354,26 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Total Affected Foreigners"
+                            android:text="@string/total_affected_foreigners"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/affected_foreigners_textview_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:text="0"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/affected_foreigners_words_textview_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Zero"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/_0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/affected_foreigners_textview_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/zero"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />

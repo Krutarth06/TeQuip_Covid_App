@@ -28,6 +28,7 @@
     <color name="active_one">#ffffff</color>
     <color name="active_two">#ffffff</color>
     <color name="active_three">#ffffff</color>
+    <color name="grey">#808080</color>
 
 
     <array name="active">

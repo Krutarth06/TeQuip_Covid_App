@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="Country Name"
+        android:text="@string/country_name"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"/>
 </LinearLayout>

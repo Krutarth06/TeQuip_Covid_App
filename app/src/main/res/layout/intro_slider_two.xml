@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2DAAE2">
+    android:background="#69CCAF">
 
     <ImageView
         android:id="@+id/vaccination_image_id"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/vaccination" />
+        android:src="@drawable/vaccination"
+        android:contentDescription="@string/register_yourself_for_vaccination_on_cowin_portal" />
 
     <TextView
         android:layout_below="@+id/vaccination_image_id"
@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:textAlignment="center"
-        android:text="Register yourself for vaccination on Cowin portal."
-        android:textColor="@color/white"
+        android:text="@string/register_yourself_for_vaccination_on_cowin_portal"
+        android:textColor="#161659"
         android:textSize="16sp"
         android:textStyle="bold" />
 </RelativeLayout>
