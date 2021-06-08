@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".state">
+
+    <ProgressBar
+        android:id="@+id/main_loader_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:progressTint="@color/main_color"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout_stateList_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/search_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color">
+
+
+        <EditText
+            android:id="@+id/search_bar_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/serchbar_design"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:drawableStart="@drawable/search_icon"
+            android:drawablePadding="5dp"
+            android:hint="Ex. Maharashtra"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:autofillHints="true" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/Country_name_textview_id"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</FrameLayout>

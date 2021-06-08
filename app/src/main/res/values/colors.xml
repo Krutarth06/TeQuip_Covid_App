@@ -7,11 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="light_green">#00e600</color>
+    <color name="light_green">#189B4D</color>
     <color name="light_blue">#00ccff</color>
     <color name="purple">#6600cc</color>
-    <color name="red">#ff3300</color>
-    <color name="yellow">#ffaf1a</color>
+    <color name="red">#C62020</color>
+    <color name="yellow">#FBB03B</color>
     <color name="light_blue_bg">#e6faff</color>
     <color name="light_green_bg">#e6ffe6</color>
     <color name="red_bg">#ffc2b3</color>
@@ -19,6 +19,18 @@
     <color name="purple_bg">#ffccff</color>
     <color name="purple_text">#b300b3</color>
     <color name="greyish_blue">#5c5c8a</color>
+    <color name="main_color">#161659</color>
+
+    <color name="g1">#279170</color>
+    <color name="g2">#38af87</color>
+    <color name="g3">#52dda8</color>
+    <color name="g4">#a0f9d5</color>
+    <color name="b1">#161659</color>
+    <color name="b2">#464682</color>
+    <color name="b3">#9999c1</color>
+
+    <color name="secondary_txt">#6e6e96</color>
+    <color name="secondary_txtD">#9a9ab7</color>
 <!--   dots inactive color-->
     <color name="inactive_one">#808080</color>
     <color name="inactive_two">#808080</color>

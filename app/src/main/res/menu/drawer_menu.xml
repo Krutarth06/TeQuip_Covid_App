@@ -6,27 +6,31 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="Home" />
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_add_features"
+            android:icon="@drawable/ic_baseline_spa_24"
+            android:title="@string/additional_features" />
         <item
             android:id="@+id/nav_symptoms"
             android:icon="@drawable/ic_baseline_sick_24"
-            android:title="Symptoms check" />
+            android:title="@string/symptoms_check" />
         <item
             android:id="@+id/nav_about_us"
             android:icon="@drawable/ic_baseline_about_us_24"
-            android:title="About Us" />
+            android:title="@string/about_us" />
         <item
             android:id="@+id/nav_privacy_policy"
             android:icon="@drawable/ic_baseline_privacy_policy_24"
-            android:title="Privacy Policy" />
+            android:title="@string/privacy_policy" />
         <item
             android:id="@+id/nav_share_app"
             android:icon="@drawable/ic_baseline_share_24"
-            android:title="Share App" />
+            android:title="@string/share_app" />
         <item
             android:id="@+id/nav_rate_app"
             android:icon="@drawable/ic_baseline_rate_review_24"
-            android:title="Rate the App" />
+            android:title="@string/rate_the_app" />
     </group>
 
 </menu>

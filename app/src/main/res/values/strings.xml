@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid App</string>
+    <string name="app_name">CoviTrack</string>
     <string name="open">open_drawer</string>
     <string name="close">close_drawer</string>
     <string name="are_you_feeling_sick">Are you feeling sick?</string>
@@ -37,9 +37,17 @@
     <string name="search">Search</string>
     <string name="total_affected_foreigners">Total Affected Foreigners</string>
     <string name="state_name">State Name</string>
-    <string name="privacy_policy">Privacy Policy</string>
     <string name="next">Next</string>
     <string name="today_deaths">Today Deaths</string>
     <string name="today_s_statistics1">Today\'s Statistics</string>
     <string name="flag_image">Flag image</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_40_of_total_affected">40% of total Affected</string>
+    <string name="home">Home</string>
+    <string name="additional_features">Additional features</string>
+    <string name="symptoms_check">Symptoms check</string>
+    <string name="about_us">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="share_app">Share App</string>
+    <string name="rate_the_app">Rate the App</string>
 </resources>

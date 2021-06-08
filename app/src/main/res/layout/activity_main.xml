@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -16,272 +16,348 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/drawer_menu"/>
+        app:menu="@menu/drawer_menu" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple"
+            android:background="@color/main_color"
+            app:menu="@menu/side_menu"
             app:navigationIcon="@drawable/ic_baseline_menu_24"
-            app:title="Covid Tracker"
-            app:titleTextColor="@color/white"
-            app:menu="@menu/side_menu" />
-
+            app:title="@string/app_name"
+            app:titleTextColor="#69ccaf" />
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/starting_view_design"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Statistics"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/main_color"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/india_frag_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:text="India"
+                    android:textAllCaps="false"
+                    android:textColor="@color/main_color" />
+
+                <Button
+                    android:id="@+id/state_frag_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:text="States"
+                    android:textAllCaps="false"
+                    android:textColor="@color/main_color" />
+
+                <Button
+                    android:id="@+id/global_frag_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:text="Global"
+                    android:textAllCaps="false"
+                    android:textColor="@color/main_color" />
+
+                <Button
+                    android:id="@+id/country_frag_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_design"
+                    android:text="Countries"
+                    android:textAllCaps="false"
+                    android:textColor="@color/main_color" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frag_layout_id"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight=".7"
-                android:text="@string/are_you_feeling_sick"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1.7"
-                android:text="@string/if_you_are_feeling_sick_with_any_of_covid_19_symptoms_please_call_or_email_on_following_helpline_immediately_for_help"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1">
-
-                <Button
-                    android:id="@+id/call_btn"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_design"
-                    android:backgroundTint="#FF4D58"
-                    android:drawableStart="@drawable/call_image"
-                    android:maxLines="1"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:singleLine="true"
-                    android:text="@string/call_now"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-                <Button
-                    android:id="@+id/email_btn"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_design"
-                    android:backgroundTint="#4D79FF"
-                    android:drawableStart="@drawable/ic_baseline_email_24"
-                    android:maxLines="1"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:singleLine="true"
-                    android:text="@string/send_email"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight=".7"
-                android:text="@string/prevention"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="3.5"
-                android:baselineAligned="false">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    tools:ignore="NestedWeights">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/avoid_close_contact"
-                        android:src="@drawable/ic_prevention1" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
-                        android:text="@string/avoid_close_contact"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/clean_your_hands_often"
-                        android:src="@drawable/ic_prevention2" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
-                        android:text="@string/clean_your_hands_often"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/wear_a_face_mask"
-                        android:src="@drawable/ic_prevention3" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
-                        android:text="@string/wear_a_face_mask"
-                        android:textAlignment="center"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/symptom_btn_id"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_purple"
-                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:text="@string/do_your_own_medical_test"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/See_stat_btn_id"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_purple"
-                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-                android:paddingStart="20sp"
-                android:paddingEnd="20sp"
-                android:text="@string/global_statistics"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/countries_stat_btn_id"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_purple"
-                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-                android:paddingStart="20sp"
-                android:paddingEnd="20sp"
-                android:text="@string/country_wise_statistics"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/See_states_btn_id"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_purple"
-                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-                android:paddingStart="20sp"
-                android:paddingEnd="20sp"
-                android:text="@string/state_wise_statistics_for_india"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/Cowin_portal_btn_id"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_purple"
-                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"
-                android:paddingStart="20sp"
-                android:paddingEnd="20sp"
-                android:text="@string/book_your_slot_for_vaccination"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_margin="20dp"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:layout_weight=".7"-->
+    <!--                android:text="@string/are_you_feeling_sick"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:layout_weight="1.7"-->
+    <!--                android:text="@string/if_you_are_feeling_sick_with_any_of_covid_19_symptoms_please_call_or_email_on_following_helpline_immediately_for_help"-->
+    <!--                android:textSize="14sp"-->
+    <!--                android:textStyle="bold" />-->
+
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginBottom="5dp"-->
+    <!--                android:layout_weight="1">-->
+
+    <!--                <Button-->
+    <!--                    android:id="@+id/call_btn"-->
+    <!--                    style="?android:attr/buttonBarButtonStyle"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="10dp"-->
+    <!--                    android:layout_marginEnd="10dp"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:background="@drawable/btn_design"-->
+    <!--                    android:backgroundTint="#FF4D58"-->
+    <!--                    android:drawableStart="@drawable/call_image"-->
+    <!--                    android:maxLines="1"-->
+    <!--                    android:paddingStart="20dp"-->
+    <!--                    android:paddingEnd="20dp"-->
+    <!--                    android:singleLine="true"-->
+    <!--                    android:text="@string/call_now"-->
+    <!--                    android:textAllCaps="false"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    tools:ignore="NestedWeights" />-->
+
+    <!--                <Button-->
+    <!--                    android:id="@+id/email_btn"-->
+    <!--                    style="?android:attr/buttonBarButtonStyle"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="10dp"-->
+    <!--                    android:layout_marginEnd="10dp"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:background="@drawable/btn_design"-->
+    <!--                    android:backgroundTint="#4D79FF"-->
+    <!--                    android:drawableStart="@drawable/ic_baseline_email_24"-->
+    <!--                    android:maxLines="1"-->
+    <!--                    android:paddingStart="20dp"-->
+    <!--                    android:paddingEnd="20dp"-->
+    <!--                    android:singleLine="true"-->
+    <!--                    android:text="@string/send_email"-->
+    <!--                    android:textAllCaps="false"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textSize="14sp"-->
+    <!--                    android:textStyle="bold" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_weight=".7"-->
+    <!--                android:text="@string/prevention"-->
+    <!--                android:textSize="18sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_marginBottom="20dp"-->
+    <!--                android:layout_weight="3.5"-->
+    <!--                android:baselineAligned="false">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:orientation="vertical"-->
+    <!--                    tools:ignore="NestedWeights">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="0dp"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:contentDescription="@string/avoid_close_contact"-->
+    <!--                        android:src="@drawable/ic_prevention1" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:paddingStart="5dp"-->
+    <!--                        android:paddingEnd="5dp"-->
+    <!--                        android:text="@string/avoid_close_contact"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="0dp"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:contentDescription="@string/clean_your_hands_often"-->
+    <!--                        android:src="@drawable/ic_prevention2" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:paddingStart="5dp"-->
+    <!--                        android:paddingEnd="5dp"-->
+    <!--                        android:text="@string/clean_your_hands_often"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="0dp"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:contentDescription="@string/wear_a_face_mask"-->
+    <!--                        android:src="@drawable/ic_prevention3" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:paddingStart="5dp"-->
+    <!--                        android:paddingEnd="5dp"-->
+    <!--                        android:text="@string/wear_a_face_mask"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textStyle="bold" />-->
+    <!--                </LinearLayout>-->
+
+    <!--            </LinearLayout>-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/symptom_btn_id"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@drawable/btn_purple"-->
+    <!--                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"-->
+    <!--                android:paddingStart="20dp"-->
+    <!--                android:paddingEnd="20dp"-->
+    <!--                android:text="@string/do_your_own_medical_test"-->
+    <!--                android:textAlignment="viewStart"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/See_stat_btn_id"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@drawable/btn_purple"-->
+    <!--                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"-->
+    <!--                android:paddingStart="20sp"-->
+    <!--                android:paddingEnd="20sp"-->
+    <!--                android:text="@string/global_statistics"-->
+    <!--                android:textAlignment="viewStart"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/countries_stat_btn_id"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@drawable/btn_purple"-->
+    <!--                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"-->
+    <!--                android:paddingStart="20sp"-->
+    <!--                android:paddingEnd="20sp"-->
+    <!--                android:text="@string/country_wise_statistics"-->
+    <!--                android:textAlignment="viewStart"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/See_states_btn_id"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@drawable/btn_purple"-->
+    <!--                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"-->
+    <!--                android:paddingStart="20sp"-->
+    <!--                android:paddingEnd="20sp"-->
+    <!--                android:text="@string/state_wise_statistics_for_india"-->
+    <!--                android:textAlignment="viewStart"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/Cowin_portal_btn_id"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="0dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:background="@drawable/btn_purple"-->
+    <!--                android:drawableEnd="@drawable/ic_baseline_arrow_forward_24"-->
+    <!--                android:paddingStart="20sp"-->
+    <!--                android:paddingEnd="20sp"-->
+    <!--                android:text="@string/book_your_slot_for_vaccination"-->
+    <!--                android:textAlignment="viewStart"-->
+    <!--                android:textAllCaps="false"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="16sp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->
 </androidx.drawerlayout.widget.DrawerLayout>

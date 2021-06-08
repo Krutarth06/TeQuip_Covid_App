@@ -10,5 +10,7 @@
         android:padding="10dp"
         android:text="@string/country_name"
         android:textSize="18sp"
+        android:singleLine="true"
+        android:maxLines="1"
         android:textColor="@color/black"/>
 </LinearLayout>

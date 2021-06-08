@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple">
+        android:background="@color/main_color">
 
         <ImageView
             android:id="@+id/about_back_id"
