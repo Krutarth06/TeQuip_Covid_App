@@ -31,10 +31,10 @@
 
     <color name="secondary_txt">#6e6e96</color>
     <color name="secondary_txtD">#9a9ab7</color>
-<!--   dots inactive color-->
-    <color name="inactive_one">#808080</color>
-    <color name="inactive_two">#808080</color>
-    <color name="inactive_three">#808080</color>
+    <!--   dots inactive color-->
+    <color name="inactive_one">#161659</color>
+    <color name="inactive_two">#161659</color>
+    <color name="inactive_three">#161659</color>
 
     <!--   dots active color-->
     <color name="active_one">#ffffff</color>

@@ -24,17 +24,15 @@
         <LinearLayout
             android:id="@+id/search_bar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/main_color">
+            android:layout_height="wrap_content">
 
 
             <EditText
                 android:id="@+id/search_bar_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="5dp"
                 android:background="@drawable/serchbar_design"
-                android:backgroundTint="@color/white"
                 android:inputType="text"
                 android:drawableStart="@drawable/search_icon"
                 android:drawablePadding="5dp"

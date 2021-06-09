@@ -32,7 +32,7 @@
 
                 <ImageView
                     android:id="@+id/flag_image_id_i"
-                    android:layout_width="50dp"
+                    android:layout_width="45dp"
                     android:layout_height="match_parent"
                     android:layout_margin="15dp"
                     android:contentDescription="@string/flag_image"
@@ -46,7 +46,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:maxLines="1"
-                    android:padding="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
                     android:singleLine="true"
                     android:text="India"
                     android:textColor="@color/main_color"

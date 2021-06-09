@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+
     private boolean isAppInstalled(String s) {
         PackageManager packageManager = getPackageManager();
         boolean is_installed;
